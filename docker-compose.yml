@@ -1,0 +1,14 @@
+
+version: '3.8'
+
+services:
+  orangery-ventures:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: orangery-ventures-web
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
