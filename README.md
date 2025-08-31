@@ -1,69 +1,197 @@
-# Welcome to your Lovable project
+# Orangery Ventures
 
-## Project info
+Un sito web moderno e responsivo per Orangery Ventures, costruito con React, TypeScript e Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/f34e3a91-e821-4705-9e65-257dcf59254e
+## 🚀 Panoramica
 
-## How can I edit this code?
+Orangery Ventures è una piattaforma di venture capital che si concentra su founder diversificati e sottovalutati, con particolare attenzione al mercato baltico. Il sito presenta la filosofia di investimento, l'approccio e la community dell'azienda.
 
-There are several ways of editing your application.
+## 🛠️ Tecnologie Utilizzate
 
-**Use Lovable**
+- **React 18** - Libreria per l'interfaccia utente
+- **TypeScript** - Superset tipizzato di JavaScript
+- **Vite** - Build tool e dev server ultrarapido
+- **Tailwind CSS** - Framework CSS utility-first
+- **shadcn/ui** - Componenti UI riutilizzabili
+- **React Router Dom** - Routing lato client
+- **TanStack Query** - Gestione dello stato server
+- **Radix UI** - Componenti headless accessibili
+- **Framer Motion** (tramite animazioni custom) - Animazioni
+- **Docker** - Containerizzazione dell'applicazione
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f34e3a91-e821-4705-9e65-257dcf59254e) and start prompting.
+## 📁 Struttura del Progetto
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+├── public/                     # File statici
+│   └── lovable-uploads/       # Immagini caricate
+├── src/
+│   ├── components/            # Componenti React
+│   │   ├── ui/               # Componenti shadcn/ui
+│   │   ├── ui-custom/        # Componenti UI personalizzati
+│   │   ├── animations/       # Componenti di animazione
+│   │   ├── About.tsx         # Sezione Chi Siamo
+│   │   ├── Community.tsx     # Sezione Community
+│   │   ├── Footer.tsx        # Footer del sito
+│   │   ├── Gap.tsx           # Sezione Gap
+│   │   ├── Header.tsx        # Header e navigazione
+│   │   ├── Hero.tsx          # Sezione hero principale
+│   │   ├── InvestmentApproach.tsx # Approccio agli investimenti
+│   │   ├── Manifesto.tsx     # Tesi di investimento
+│   │   └── FoundersInSearch.tsx # Founder ricercati
+│   ├── hooks/                # Custom hooks
+│   ├── lib/                  # Utilità e configurazioni
+│   ├── pages/                # Pagine dell'applicazione
+│   │   ├── Index.tsx         # Pagina principale
+│   │   └── NotFound.tsx      # Pagina 404
+│   ├── App.tsx              # Componente root
+│   ├── main.tsx             # Entry point
+│   └── index.css            # Stili globali e design system
+├── docker-compose.yml        # Configurazione Docker Compose
+├── Dockerfile               # Configurazione Docker
+├── nginx.conf              # Configurazione Nginx
+└── tailwind.config.ts      # Configurazione Tailwind
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Design System
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Il progetto utilizza un design system basato su token semantici definiti in `src/index.css`:
 
-**Use GitHub Codespaces**
+- **Colori**: Palette di colori coerente con varianti per light/dark mode
+- **Tipografia**: Font serif per titoli e font sans per il corpo del testo  
+- **Spaziature**: Sistema di spaziature consistente
+- **Animazioni**: Transizioni fluide e naturali
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🚀 Avvio Rapido
 
-## What technologies are used for this project?
+### Prerequisiti
 
-This project is built with .
+- Node.js 18+ 
+- npm o yarn
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Installazione
 
-## How can I deploy this project?
+1. **Clona il repository**
+   ```bash
+   git clone <URL_DEL_REPOSITORY>
+   cd orangery-ventures
+   ```
 
-Simply open [Lovable](https://lovable.dev/projects/f34e3a91-e821-4705-9e65-257dcf59254e) and click on Share -> Publish.
+2. **Installa le dipendenze**
+   ```bash
+   npm install
+   ```
 
-## I want to use a custom domain - is that possible?
+3. **Avvia il server di sviluppo**
+   ```bash
+   npm run dev
+   ```
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+4. **Apri il browser**
+   
+   Il sito sarà disponibile su `http://localhost:8080`
+
+### Build di Produzione
+
+```bash
+# Crea la build di produzione
+npm run build
+
+# Anteprima della build
+npm run preview
+```
+
+## 🐳 Docker
+
+### Build e Run con Docker
+
+```bash
+# Build dell'immagine Docker
+docker build -t orangery-ventures .
+
+# Run del container
+docker run -p 3000:80 orangery-ventures
+```
+
+### Utilizzo con Docker Compose
+
+```bash
+# Avvia tutti i servizi
+docker-compose up -d
+
+# Fermati servizi
+docker-compose down
+```
+
+Il sito sarà disponibile su `http://localhost:3000`
+
+## 🧩 Componenti Principali
+
+### Sezioni del Sito
+
+- **Hero**: Sezione principale con immagine di background e messaging chiave
+- **Manifesto**: Tesi di investimento e filosofia aziendale
+- **Gap**: Descrizione del gap di mercato identificato
+- **FoundersInSearch**: Tipologie di founder ricercati
+- **InvestmentApproach**: Approccio agli investimenti
+- **About**: Informazioni sull'azienda
+- **Community**: Sezione community e network
+- **Footer**: Contatti e link utili
+
+### Animazioni
+
+Il progetto utilizza animazioni custom tramite il componente `FadeIn` per creare transizioni fluide durante lo scroll.
+
+## 🔧 Configurazione
+
+### Tailwind CSS
+
+La configurazione Tailwind è estesa con:
+- Colori personalizzati del brand
+- Font personalizzati
+- Animazioni custom
+- Breakpoint responsivi
+
+### Vite
+
+Configurazione ottimizzata per:
+- Hot Module Replacement (HMR)
+- Alias di path (`@/` per `src/`)
+- Build ottimizzata per produzione
+
+## 📱 Responsività
+
+Il sito è completamente responsivo con breakpoint per:
+- Mobile: < 768px
+- Tablet: 768px - 1024px  
+- Desktop: > 1024px
+
+## 🌐 SEO e Performance
+
+- Meta tag ottimizzati
+- Immagini ottimizzate
+- Lazy loading
+- Code splitting automatico
+- Compression gzip (via Nginx)
+- Cache headers per asset statici
+
+## 🤝 Contribuzioni
+
+1. Fork del progetto
+2. Crea un branch per la feature (`git checkout -b feature/AmazingFeature`)
+3. Commit delle modifiche (`git commit -m 'Add some AmazingFeature'`)
+4. Push al branch (`git push origin feature/AmazingFeature`)
+5. Apri una Pull Request
+
+## 📄 Licenza
+
+Questo progetto è distribuito sotto licenza MIT. Vedi il file `LICENSE` per maggiori informazioni.
+
+## 📞 Contatti
+
+**Orangery Ventures**
+- Website: [orangeryventures.com](https://orangeryventures.com)
+- Email: info@orangeryventures.com
+
+---
+
+Realizzato con ❤️ da Orangery Ventures
